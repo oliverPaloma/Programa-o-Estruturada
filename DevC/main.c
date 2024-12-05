@@ -2,19 +2,19 @@
 #include <string.h>
 #include "projeto.h"
 
-
 int main() {
     Dia semana[MAX_DIAS];
     inicializar_semana(semana);
     int opcao;
     do {
-        printf("Escolha uma op√ß√£o:\n");
+        printf("Escolha uma opÁ„o:\n");
         printf("1. Adicionar tarefa\n");
         printf("2. Ver cronograma\n");
         printf("3. Ver total de tarefas\n");
         printf("4. Ver prioridade\n");
+        printf("5. imprimir lista de tarefas\n");
         printf("0. Sair\n");
-        printf("Op√ß√£o: ");
+        printf("OpÁ„o: ");
         scanf("%d", &opcao);
         switch (opcao) {
             case 1:
@@ -29,12 +29,16 @@ int main() {
             case 4:
                 printf("Prioridade principal: %.2f\n", maiores_prioridades(semana));
                 break;
+            case 5:
+                imprimir_tarefas_recursiva(semana, 0, 0); //chamada
+                break;
             case 0:
                 printf("Saindo do programa.\n");
                 break;
             default:
-                printf("Op√ß√£o inv√°lida.\n");
+                printf("OpÁ„o inv·lida.\n");
         }
     } while (opcao != 0);
     return 0;
 }
+
