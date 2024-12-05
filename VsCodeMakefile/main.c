@@ -12,6 +12,7 @@ int main() {
         printf("2. Ver cronograma\n");
         printf("3. Ver total de tarefas\n");
         printf("4. Ver prioridade\n");
+        printf("5. imprimir lista de tarefas\n");
         printf("0. Sair\n");
         printf("Opção: ");
         scanf("%d", &opcao);
@@ -28,6 +29,10 @@ int main() {
             case 4:
                 printf("Prioridade principal: %.2f\n", maiores_prioridades(semana));
                 break;
+            case 5:
+                imprimir_tarefas_recursiva(semana, 0, 0); //chamada
+                break;
+
             case 0:
                 printf("Saindo do programa.\n");
                 break;
